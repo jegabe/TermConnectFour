@@ -20,8 +20,5 @@ class TermConnectFour(ConanFile):
 
     def build(self):
         cmake = self.configure_cmake()
-        args = None
-        if self.settings.compiler == "Visual Studio":
-            args = ["Thost=x64"] # Use 64 bit compiler/liker host
-        cmake.configure(args=args)
+        cmake.configure()
         cmake.build()
